@@ -34,10 +34,11 @@ export default function ConverterResult() {
         const rateData = await rateResponse.json();
         setRate(rateData.rates[toCur])
 
-        // Fetch conversion result based on entered amount
-        const resultResponse = await fetch(endpointPath(amount, fromCur, toCur));
-        const resultData = await resultResponse.json();
-        setConverted(resultData.rates[toCur]);
+        // // Fetch conversion result based on entered amount
+        // const resultResponse = await fetch(endpointPath(amount, fromCur, toCur));
+        // const resultData = await resultResponse.json();
+        // setConverted(resultData.rates[toCur]);
+        setConverted(amount * rate)
 
       } catch (error) {
         // Handle fetch or conversion errors here
